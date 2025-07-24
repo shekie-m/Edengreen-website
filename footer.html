@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="includes.js"></script>
+    <style>
+        html, body{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        footer{
+            background-color: #f5f5dc;
+            width:100vw;
+            margin-top: auto;
+
+        }
+        .footer-container{
+            display: flex;
+            justify-content: space-around;
+            gap: 200px;
+        }
+        .about-eden{
+            width:250px;
+            align-self: center;
+            padding-left: 30px;
+            padding-right: 20px;
+        }
+        .brief{
+            text-align: center;
+        }
+        .footer-nav-cont{
+            margin-top: 50px;
+            margin-bottom: 50px;
+            margin-left: -100px;
+            
+           
+        }
+        .footer-menu{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            gap: 15px;
+        }
+        .footer-menu a{
+            text-decoration: none;
+            color: #083108;
+        }
+        .footer-menu a:hover{
+            color: #687d72;
+        }
+        .reach-us{
+            margin-left: -100px;
+            margin-top: 30px;
+            margin-right: 0;
+            box-sizing: border-box;
+            
+
+            }
+        .reach-us p{
+            margin: 30px 0px;
+        }
+        .reach-us a{
+            color: #687d72;
+        }
+        .reach-us a:hover{
+            color: #899e89;
+        }
+        hr.rule {
+            width: 95%;          
+            padding-left: 10px; 
+            padding-right: 10px;
+            box-sizing: border-box;
+        }
+        .below-footer{
+            display: flex;
+            justify-content: space-between;
+            gap: 90px;
+            align-items: center;
+        }
+        .copy{
+            position: relative;
+            left: 50px;
+        }
+        .socials{
+            position:relative;
+            left: -50px;
+        }
+        .social-icons a{
+            color: #083108;
+        }
+
+        @media (max-width: 768px){
+            footer{
+        
+                margin-top: auto;
+            }
+            .footer-container{
+                flex-direction:column;
+                align-items: center;
+                gap: 0px;
+                padding: 0;
+                margin: 0;
+            } 
+            .footer-nav-cont{
+                display: none;
+                margin: 0;
+                padding: 0;
+            }
+            .footer-menu{
+                visibility: hidden;
+                margin: 0;
+                padding: 0;
+                height: 0;
+                width: 0;
+            }
+            .reach-us{
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .reach-us p{
+                margin: 5px;
+            }
+            .reach-us h4{
+                margin-top:  20px;
+                margin-bottom: 0px;
+            }
+            .about-eden{
+                box-sizing: border-box;
+                padding: 30px 0px 0px ;
+            }
+            .copy{
+                position: relative;
+                left: 5px;
+                margin: 0;
+                padding: 0;
+                width: 230px;
+                
+            }
+            .below-footer{
+                gap: 20px;
+            }
+            .socials{
+                display: flex;
+                justify-content: space-around;
+                gap: 20px;
+                flex-wrap: nowrap;
+                position: relative;
+                left: 1px;
+                width: 140px;
+                margin: 0;
+
+            }
+            .social-icons a{
+                font-size: 25px;
+                padding: 0px 5px;
+            } 
+        }
+    
+    </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <footer>
+        <div class="footer-container">
+            <div class="about-eden">
+                <img src="edengreenlogo.png" alt="eden green logo" class="logo">
+
+                <p class="brief">Eden Green is a trusted real estate company dedicated to helping you find, buy, and invest in properties with confidence. We offer personalized solutions and expert guidance to turn your property goals into reality.</p>
+                
+            </div>
+
+            <div class="footer-nav-cont">
+                <nav class="footer-menu">
+                    <a href="index.html">Home</a>
+                    <a href="properties.html">Properties</a>
+                   <!-- <nav>
+                            <ul>
+                               <p><a href="kasarani.html">Kasarani</a></p>
+                                <p><a href="luckysummer.html">Lucky Summer</a></p>
+                                <p><a href="ruaka.html">Ruaka</a></p>
+                                <p><a href="denderu.html">Denderu</a></p> 
+
+                            </ul>
+                        </nav>  
+                    -->
+                    <a href="projects.html">Projects</a>
+                    <a href="about-us.html">About us</a>
+                    <a href="services.html">Services</a></li>
+                    <a href="blogs.html">Insights</a>
+                    <a href="contact-us.html">Contact</a>
+                
+                </nav> 
+            </div>
+            <div class="reach-us">
+               <h4>Contacts</h4> 
+                <p><i class="fas fa-phone"></i> Call:<a href="tel:+254722995076"> +254722 995 076</a></p>
+                <p><i class="fas fa-envelope"></i> Email:<a href="mailto:info@edengreen.co.ke"> info@edengreen.co.ke</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Location: Westlands Commercial Centre, 2nd Flr,<br> F3, Ring Rd, Nairobi, Kenya</p>
+            </div>
+        </div>
+        <hr class="rule">
+        <div class="below-footer">
+            <div class="copy">
+                <p>&copy; 2025 Eden Green Developers Limited. All rights reserved.</p>
+            </div>
+            <div class="socials">
+               <div class="social-icons">
+                    <a href="https://facebook.com/yourpage" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+</div>
+
+            </div>
+        </div>
+    </footer>
+  </div>  
+</body>
+</html>

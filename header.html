@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Nav</title>
+  <style>
+    html, body{
+      overflow-x: hidden;
+      margin: 0;
+      padding:0;
+      max-width: 100%;
+    }
+
+    .head {
+      background-color: #f5f5dc;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      position: relative;
+    }
+
+    .header-logo {
+      width: 150px;
+      height: auto;
+    }
+
+    .nav-menu {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      margin-right: 80px;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: rgb(8, 49, 8);
+      padding: 10px;
+    }
+
+    .nav-menu a:hover {
+      color: #687d72;
+    }
+    .dropdown {
+      position: relative;
+      top: 10px;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f5f5dc;
+      min-width: 160px;
+      z-index: 1000;
+      top: 100%;
+      left: 0;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #083108;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #083108;
+      color:#f5f5dc;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+  }
+
+
+
+    .menu-icon {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      margin-right: 30px;
+      color: rgb(8, 49, 8);
+    }
+
+    @media (max-width: 768px) {
+        .menu-icon {
+            display: block;
+        }
+      .nav-menu {
+        flex-direction: column;
+        background-color: #0A3428;
+        color:#687d72;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 0px;
+        z-index: 1000;
+        width:200px;
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .nav-menu.show {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+      }
+      .nav-menu a {
+        color: white;
+        border-bottom: 1px solid #1a5a4a;
+        margin-bottom: 5px;
+      }
+      .nav-menu a:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+      .nav-menu a:hover {
+        color: #b8d4c8;
+      }
+
+
+    }
+  </style>
+  
+</head>
+<body>
+
+  <header>
+    <div class="head">
+      <div>
+        <img src="edengreenlogo.png" class="header-logo" alt="logo" />
+      </div>
+
+      <div class="menu-icon" id="menuIcon">&#9776;</div>
+
+      <nav class="nav-menu" id="navLinks">
+        <a href="index.html">Home</a>
+
+        <div class="dropdown">
+          <a href="properties.html" class="dropbtn">Properties</a>
+            <div class="dropdown-content">
+              <a href="kasarani.html">Kasarani</a>
+              <a href="luckysummer.html">Lucky Summer</a>
+              <a href="ruaka.html">Ruaka</a>
+              <a href="denderu.html">Denderu</a>
+            </div>
+        </div>
+
+          <a href="projects.html">Projects</a>
+          <a href="about-us.html">About us</a>
+          <a href="services.html">Services</a>
+          <a href="blogs.html">Insights</a>
+          <a href="contact-us.html">Contact</a>
+      </nav>
+
+       
+    </div>
+  </header>
+</body>
+
+<script>
+function toggleMenu() {
+  const navLinks = document.getElementById("navLinks");
+  const menuIcon = document.getElementById("menuIcon");
+  
+  if (navLinks) {
+    navLinks.classList.toggle("show");
+    
+    // Visual feedback
+    if (menuIcon) {
+      menuIcon.style.backgroundColor = navLinks.classList.contains('show') ? 'green' : 'red';
+    }
+  }
+}
+
+// Set initial red background when page loads
+setTimeout(function() {
+  const menuIcon = document.getElementById("menuIcon");
+}, 100);
+</script>
+
+</html>
+
+                                
+ 
+                                
