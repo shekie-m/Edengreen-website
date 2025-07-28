@@ -3,139 +3,172 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Responsive Nav</title>
+  <title>Header</title>
   <style>
-    html, body{
-      overflow-x: hidden;
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
       margin: 0;
-      padding:0;
-      max-width: 100%;
+      font-family: 'Roboto', sans-serif;
     }
 
     .head {
       background-color: #f5f5dc;
-      width: 100%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       padding: 10px 20px;
       position: relative;
     }
 
     .header-logo {
       width: 150px;
-      height: auto;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #083108;
     }
 
     .nav-menu {
       display: flex;
-      flex-direction: row;
       gap: 20px;
-      margin-right: 80px;
     }
 
     .nav-menu a {
       text-decoration: none;
-      color: rgb(8, 49, 8);
+      color: #083108;
       padding: 10px;
     }
 
     .nav-menu a:hover {
       color: #687d72;
     }
+
     .dropdown {
       position: relative;
       top: 10px;
-      display: inline-block;
+     
     }
-
     .dropdown-content {
       display: none;
       position: absolute;
-      background-color: #f5f5dc;
-      min-width: 160px;
-      z-index: 1000;
       top: 100%;
       left: 0;
+      background-color: #f5f5dc;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      z-index: 1000;
+      left: -30px;
+      
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
 
     .dropdown-content a {
       display: block;
       padding: 10px;
-      text-decoration: none;
       color: #083108;
+      text-decoration: none;
+      border-bottom: 1px solid #083108;
     }
+    .dropdown-content a:last-child{
+        border-bottom: none;
+        margin-bottom: 0;   
+    }
+   
 
     .dropdown-content a:hover {
-      background-color: #083108;
-      color:#f5f5dc;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-  }
-
-
-
-    .menu-icon {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      margin-right: 30px;
-      color: rgb(8, 49, 8);
+      color: #687d72;
     }
 
     @media (max-width: 768px) {
-        .menu-icon {
-            display: block;
-        }
+      .menu-icon {
+        display: block;
+      }
+
       .nav-menu {
+        display: none;
         flex-direction: column;
-        background-color: #0A3428;
-        color:#687d72;
         position: absolute;
         top: 60px;
         right: 20px;
+        background-color: #0A3428;
         padding: 10px;
-        border-radius: 0px;
-        z-index: 1000;
-        width:200px;
-        transform: translateX(100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
+        width: 200px;
+        z-index: 999;
       }
 
-      .nav-menu.show {
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
+      .nav-menu.active {
+        display: flex;
       }
+
       .nav-menu a {
-        color: white;
-        border-bottom: 1px solid #1a5a4a;
-        margin-bottom: 5px;
+        color: #f5f5dc;
+        border-bottom: 1px solid #083108;
       }
-      .nav-menu a:last-child {
+       .nav-menu a:last-child {
         border-bottom: none;
         margin-bottom: 0;
       }
-      .nav-menu a:hover {
-        color: #b8d4c8;
+      .dropdown {
+        position: relative;
+        top: 0;
+        }
+        .dropbtn{
+            display: block;
+            padding: 10px;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 0;
+            right: 100%; /* Push it to the left of the dropdown parent */
+            display: none;
+            background-color: #0A3428;
+            width: 150px;
+            padding: 10px;
+            margin: 0px -140px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .dropdown-content.open{
+            display: block;
+        }
+        .dropdown-content a {
+             color: #f5f5dc;
+         }
+
+      .dropdown-content a.open {
+        background-color: #f5f5dc;
+        color: #0A3428;
       }
-
-
+    }
+    @media(max-width: 360px)
+    {
+      .dropdown-content{
+        width: 120px;
+        margin: 0px -120px;
+      }
+    }
+    @media(max-width: 854px){
+      .nav-menu{
+        gap: 10px;
+      }
     }
   </style>
-  
 </head>
 <body>
 
   <header>
     <div class="head">
-      <div>
-        <img src="edengreenlogo.png" class="header-logo" alt="logo" />
-      </div>
+      <img src="eden-logo.png" alt="logo" class="header-logo" />
 
       <div class="menu-icon" id="menuIcon">&#9776;</div>
 
@@ -143,50 +176,64 @@
         <a href="index.html">Home</a>
 
         <div class="dropdown">
-          <a href="properties.html" class="dropbtn">Properties</a>
-            <div class="dropdown-content">
-              <a href="kasarani.html">Kasarani</a>
-              <a href="luckysummer.html">Lucky Summer</a>
-              <a href="ruaka.html">Ruaka</a>
-              <a href="denderu.html">Denderu</a>
-            </div>
+          <a href="#" class="dropbtn">Properties</a>
+          <div class="dropdown-content">
+            <a href="kasarani.html">Kasarani</a>
+            <a href="luckysummer.html">Lucky Summer</a>
+            <a href="ruaka.html">Ruaka</a>
+            <a href="denderu.html">Denderu</a>
+          </div>
         </div>
 
-          <a href="projects.html">Projects</a>
-          <a href="about-us.html">About us</a>
-          <a href="services.html">Services</a>
-          <a href="blogs.html">Insights</a>
-          <a href="contact-us.html">Contact</a>
+        <a href="projects.html">Projects</a>
+        <a href="about-us.html">About us</a>
+        <a href="services.html">Services</a>
+        <a href="blogs.html">Insights</a>
+        <a href="contact-us.html">Contact</a>
       </nav>
-
-       
     </div>
   </header>
-</body>
 
-<script>
-function toggleMenu() {
+  <script>
+  const menuIcon = document.getElementById("menuIcon");
   const navLinks = document.getElementById("navLinks");
-  const menuIcon = document.getElementById("menuIcon");
-  
-  if (navLinks) {
-    navLinks.classList.toggle("show");
-    
-    // Visual feedback
-    if (menuIcon) {
-      menuIcon.style.backgroundColor = navLinks.classList.contains('show') ? 'green' : 'red';
-    }
-  }
-}
 
-// Set initial red background when page loads
-setTimeout(function() {
-  const menuIcon = document.getElementById("menuIcon");
-}, 100);
+  // Toggle mobile nav menu
+  menuIcon.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+  });
+
+  // Optional: close menu after clicking any top-level link (except dropdown trigger)
+  const allLinks = navLinks.querySelectorAll("a:not(.dropbtn)");
+  allLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
+
+  // Dropdown toggle on mobile
+  const dropdownBtn = document.querySelector(".dropbtn");
+  const dropdownContent = document.querySelector(".dropdown-content");
+
+  dropdownBtn.addEventListener("click", function (e) {
+    // Prevent default anchor link behavior
+    e.preventDefault();
+
+    // Only toggle if on mobile
+    if (window.innerWidth <= 768) {
+      dropdownContent.classList.toggle("open");
+    }
+  });
+
+  // Optional: close dropdown if clicking outside on mobile
+  document.addEventListener("click", function (e) {
+    const isClickInsideDropdown = e.target.closest(".dropdown");
+    if (!isClickInsideDropdown && window.innerWidth <= 768) {
+      dropdownContent.classList.remove("open");
+    }
+  });
 </script>
 
-</html>
 
-                                
- 
-                                
+</body>
+</html>

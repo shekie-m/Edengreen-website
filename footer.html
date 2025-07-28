@@ -21,6 +21,7 @@
             background-color: #f5f5dc;
             width:100vw;
             margin-top: auto;
+            padding-bottom: 30px;
 
         }
         .footer-container{
@@ -29,10 +30,15 @@
             gap: 200px;
         }
         .about-eden{
+            display: flex;
+            flex-direction: column;
             width:250px;
             align-self: center;
             padding-left: 30px;
             padding-right: 20px;
+        }
+        .logo{
+            align-self: center;
         }
         .brief{
             text-align: center;
@@ -76,9 +82,9 @@
         }
         hr.rule {
             width: 95%;          
-            padding-left: 10px; 
-            padding-right: 10px;
-            box-sizing: border-box;
+            margin: 10px auto;
+            
+            
         }
         .below-footer{
             display: flex;
@@ -101,7 +107,8 @@
         @media (max-width: 768px){
             footer{
         
-                margin-top: auto;
+                margin-top: 0;
+                padding-bottom: 15px;
             }
             .footer-container{
                 flex-direction:column;
@@ -175,7 +182,7 @@
     <footer>
         <div class="footer-container">
             <div class="about-eden">
-                <img src="edengreenlogo.png" alt="eden green logo" class="logo">
+                <img src="eden-logo.png" alt="eden green logo" class="logo">
 
                 <p class="brief">Eden Green is a trusted real estate company dedicated to helping you find, buy, and invest in properties with confidence. We offer personalized solutions and expert guidance to turn your property goals into reality.</p>
                 
