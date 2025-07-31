@@ -15,7 +15,7 @@
     }
 
     .head {
-      background-color: #f5f5dc;
+      background-color: #dff5d2;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -193,47 +193,5 @@
       </nav>
     </div>
   </header>
-
-  <script>
-  const menuIcon = document.getElementById("menuIcon");
-  const navLinks = document.getElementById("navLinks");
-
-  // Toggle mobile nav menu
-  menuIcon.addEventListener("click", function () {
-    navLinks.classList.toggle("active");
-  });
-
-  // Optional: close menu after clicking any top-level link (except dropdown trigger)
-  const allLinks = navLinks.querySelectorAll("a:not(.dropbtn)");
-  allLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("active");
-    });
-  });
-
-  // Dropdown toggle on mobile
-  const dropdownBtn = document.querySelector(".dropbtn");
-  const dropdownContent = document.querySelector(".dropdown-content");
-
-  dropdownBtn.addEventListener("click", function (e) {
-    // Prevent default anchor link behavior
-    e.preventDefault();
-
-    // Only toggle if on mobile
-    if (window.innerWidth <= 768) {
-      dropdownContent.classList.toggle("open");
-    }
-  });
-
-  // Optional: close dropdown if clicking outside on mobile
-  document.addEventListener("click", function (e) {
-    const isClickInsideDropdown = e.target.closest(".dropdown");
-    if (!isClickInsideDropdown && window.innerWidth <= 768) {
-      dropdownContent.classList.remove("open");
-    }
-  });
-</script>
-
-
 </body>
 </html>
